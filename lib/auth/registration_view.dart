@@ -155,7 +155,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Don,t have accout?",
+                    "Already have accout?",
                     style: TextStyle(fontSize: 16),
                   ),
                   const SizedBox(
