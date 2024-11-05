@@ -94,7 +94,9 @@ class _LoginViewState extends State<LoginView> {
                       "Don,t have accout?",
                       style: TextStyle(fontSize: 16),
                     ),
-                    const SizedBox(),
+                    const SizedBox(
+                      width: 6,
+                    ),
                     InkWell(
                       onTap: () {
                         Get.to(
