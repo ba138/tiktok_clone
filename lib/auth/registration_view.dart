@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tiktok_clone/Utills/components/primary_button.dart';
@@ -17,6 +19,7 @@ class _RegistrationViewState extends State<RegistrationView> {
 
   var emailController = TextEditingController();
   var confromPasswordController = TextEditingController();
+  File? profile;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,14 +29,38 @@ class _RegistrationViewState extends State<RegistrationView> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(
-                height: 40,
-              ),
               const Text(
-                "Logo",
+                "Create a account",
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 24,
                   color: Colors.white,
+                ),
+              ),
+              const VerticalSpacing(height: 12),
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                  image: profile == null
+                      ? const DecorationImage(
+                          image: NetworkImage(
+                              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"))
+                      : DecorationImage(
+                          image: FileImage(profile!),
+                        ),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    // add image from camera or gallery
+                  },
+                  child: const Center(
+                    child: Icon(
+                      Icons.add_a_photo_outlined,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
