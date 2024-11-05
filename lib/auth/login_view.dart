@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/Utills/components/primary_button.dart';
+import 'package:tiktok_clone/Utills/components/vertical_spacing.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -67,10 +69,40 @@ class _LoginViewState extends State<LoginView> {
                 TextField(
                   controller: passwordController,
                   decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      fillColor: Colors.white,
-                      filled: true),
+                    border: InputBorder.none,
+                    fillColor: Colors.white,
+                    filled: true,
+                  ),
                 ),
+                const VerticalSpacing(height: 100),
+                PrimaryButton(
+                  title: "Login",
+                  onTap: () {},
+                ),
+                const VerticalSpacing(height: 16),
+                const Text(
+                  "Or",
+                  style: TextStyle(fontSize: 16),
+                ),
+                const VerticalSpacing(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don,t have accout?",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(),
+                    InkWell(
+                      onTap: () {},
+                      child: const Text(
+                        "SignUp",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
