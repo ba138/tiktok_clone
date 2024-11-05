@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tiktok_clone/Utills/components/primary_button.dart';
 import 'package:tiktok_clone/Utills/components/vertical_spacing.dart';
+import 'package:tiktok_clone/auth/registration_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -94,7 +96,11 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     const SizedBox(),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(
+                          const RegistrationView(),
+                        );
+                      },
                       child: const Text(
                         "SignUp",
                         style: TextStyle(
