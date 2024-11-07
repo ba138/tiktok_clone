@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tiktok_clone/Utills/components/primary_button.dart';
 import 'package:tiktok_clone/Utills/components/vertical_spacing.dart';
+import 'package:tiktok_clone/auth/auth_controller.dart';
 import 'package:tiktok_clone/auth/login_view.dart';
 
 class RegistrationView extends StatefulWidget {
@@ -20,6 +21,7 @@ class _RegistrationViewState extends State<RegistrationView> {
   var emailController = TextEditingController();
   var confromPasswordController = TextEditingController();
   File? profile;
+  var authController = AuthController.instanceAuth;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +56,7 @@ class _RegistrationViewState extends State<RegistrationView> {
                 child: InkWell(
                   onTap: () {
                     // add image from camera or gallery
+                    authController.choseImageFromGallery();
                   },
                   child: const Center(
                     child: Icon(
